@@ -1,0 +1,53 @@
+<button (click)="gotoHome()">Back</button>
+<nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <div class="navbar-brand"><a class="navbar-brand" href="#"><img style="border-radius: 50px;" src="/assets/logo/Screenshot from 2024-01-22 12-50-13.png"[height]="60" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button></div>
+    
+    
+  
+      <ul class="navbar-nav ml-auto">
+       
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/register" routerLinkActive="active" style="color: black;">HOME</a>
+        </li>
+        
+      </ul>
+   
+
+  </div>
+  </nav>
+
+<div class="container mt-5">
+ 
+  <div class="row justify-content-center">
+    <div *ngFor="let blogPost of blog" >
+      <div class="blog-card" style="border: 0.2px solid rgb(193, 192, 192); box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.3);">
+        <img *ngIf="blogPost?.image" [src]="blogPost.image" alt="{{ blogPost.title }}"  class="card-img-top">
+        <div class="blog-card-body">
+          <div class="blog-card-title">
+            <h3>{{ blogPost.title }}</h3>
+          </div>
+          <div class="blog-card-content">
+            <p>{{ blogPost.content }}</p>
+          </div>
+          <div class="blog-card-details">
+            <div class="blog-card-location">
+              <strong>Location:</strong> {{ blogPost.location }}
+            </div><br>
+            <div class="blog-card-experience">
+              <strong>Experience:</strong> {{ blogPost.experience }}
+            </div>
+          </div>
+          <div class="blog-card-meta">
+            <br>
+            <span style="color: brown;">Posted On {{ blogPost.date }} | By {{ blogPost.username }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

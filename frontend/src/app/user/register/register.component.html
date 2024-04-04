@@ -1,0 +1,96 @@
+
+<nav class="navbar navbar-expand-lg " style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+    <a class="navbar-brand" href="#"><img style="border-radius: 50px;" src="/assets/logo/Screenshot from 2024-01-22 12-50-13.png"[height]="60"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item" style="margin-left: 20%;">
+                <a class="nav-link" routerLink="/" routerLinkActive="active">HOME</a>
+            </li>
+           
+        </ul>
+    </div>
+  </nav>
+
+<!-- Add this to src/app/register/register.component.html -->
+<!-- Add this to src/app/register/register.component.html -->
+<div class="container mt-5">
+    <h2 class="textdark" style="margin-left: 46%;">Register</h2>
+    <div class="col-md-6 offset-md-3">
+        <form [formGroup]=" registrationForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter your username"
+                    formControlName="username">
+                <!-- Display validation error message -->
+                <div *ngIf="registrationForm.get('username')?.hasError('required') && registrationForm.get('username')?.touched"
+                    class="text-danger">
+                    Username is required.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password"
+                    formControlName="password" autocomplete="off">
+                <!-- Display validation error message -->
+                <div *ngIf="registrationForm.get('password')?.hasError('required') && registrationForm.get('password')?.touched"
+                    class="text-danger">Password is required.
+                </div>
+                <div *ngIf="registrationForm.get('password')?.hasError('minlength') && registrationForm.get('password')?.touched"
+                    class="text-danger">Password must be at least 8 characters.
+                </div>
+                <div *ngIf="registrationForm.get('password')?.hasError('pattern') && registrationForm.get('password')?.touched"
+                    class="text-danger">Password must contain at least one lowercase letter, one uppercase letter, one
+                    digit, and
+                    one special character.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile:</label>
+                <input type="text" class="form-control" id="mobile" placeholder="Enter your mobile number"
+                    formControlName="mobile">
+
+                <!-- Display validation error message for required -->
+                <div *ngIf="registrationForm.get('mobile')?.hasError('required') && registrationForm.get('mobile')?.touched"
+                    class="text-danger">
+                    Mobile number is required.
+                </div>
+
+                <!-- Display validation error message for pattern -->
+                <div *ngIf="registrationForm.get('mobile')?.hasError('pattern') && registrationForm.get('mobile')?.touched"
+                    class="text-danger">
+                    Mobile number must be a 10-digit number.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age" placeholder="Enter your age" formControlName="age">
+                <!-- Display validation error message -->
+                <div *ngIf="registrationForm.get('age')?.hasError('required') && registrationForm.get('age')?.touched"
+                    class="text-danger">
+                    Age is required.
+                </div>
+                <div *ngIf="registrationForm.get('age')?.hasError('min') && registrationForm.get('age')?.touched"
+                    class="text-danger">
+                    Age must be at least 18.
+                </div>
+            </div>
+            <!-- Add this to your form in src/app/register/register.component.html -->
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select class="form-control" id="gender" formControlName="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <!-- ... other form controls with validation -->
+            <button type="submit" class="btn btn-primary mt-3" (click)="registrationForm.valid && register()">Register</button>
+            <button type="button" class="btn btn-danger ms-2 mt-3" (click)="cancel()">Login</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,133 @@
+
+
+
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <div class="navbar-brand"><a class="navbar-brand" href="#"><img style="border-radius: 50px;" src="/assets/logo/Screenshot from 2024-01-22 12-50-13.png"[height]="60" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button></div>
+    
+    <a><h2>𝙲𝚛𝚎𝚊𝚝𝚎 𝚊 𝙱𝚕𝚘𝚐.</h2></a>
+  
+      <ul class="navbar-nav ml-auto">
+       
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/register" routerLinkActive="active" style="color: black;">ACCOUNT</a>
+        </li>
+        
+      </ul>
+   
+
+  </div>
+  </nav>
+
+
+  <!-- Blog Posts Table -->
+  <div class="container mt-5">
+    <h2>LATEST POST</h2><br>
+    <div class="row justify-content-center">
+    
+      <div class="col-md-12">
+        
+        <div *ngFor="let bl of blog" class="col-md-4 mb-4">
+          <div class="blog-card" style="border: 0.2px solid rgb(193, 192, 192);box-shadow: 2px 8px 12px  rgba(0,0, 0, 0.3);">
+            
+            <img  (click)="gotoGetPage(bl._id)" src="{{bl.image}}" alt="" height="350px"  class="card-img-top">
+          
+            <div class="blog-card-body">
+              <div class="blog-card-title"><h3>{{bl.title}}</h3></div>
+            
+              <div class="blog-card-meta">
+
+                <br>
+               Posted On  <span style="color: brown;">{{bl.date}}</span> | By <span style="color: brown;"> {{bl.username}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="content">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="link-box">
+            <div class="link-box__title">PRODUCT</div>
+            <div class="link-box__link">WEBSITE TEMPLATES</div>
+            <div class="link-box__link">WEBSITES</div>
+            <div class="link-box__link">DOMAINS</div>
+            <div class="link-box__link">ONLINE STORES</div>
+            <div class="link-box__link">SCHEDULING</div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="link-box">
+            <div class="link-box__title">CUSTOMERS</div>
+            <div class="link-box__link">CREATORS</div>
+            <div class="link-box__link">BLOGGERS </div>
+            <div class="link-box__link">ENTERPRISE</div>
+            <div class="link-box__link">  FITNESS</div>
+          </div>
+        </div>
+        <div class="col-lg-2">
+          <div class="link-box">
+            <div class="link-box__title">COMMUNITY</div>
+            <div class="link-box__link">HELP CENTER</div>
+            <div class="link-box__link">FORUM</div>
+            <div class="link-box__link">DEVELOPER FLATFORM</div>
+            <div class="link-box__link">HIRE AN EXPERT</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="link-box">
+            <div class="link-box__title">BLOG</div>
+            <div class="link-box__subscribe-description">
+              Subscribe to our blog to get your weekly dose of news,
+              updates and special content 
+            </div>
+            <div class="input-box">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="51" height="43.667" viewBox="0 0 51 43.667">
+                <defs>
+                  <linearGradient id="linear-gradient" x2="0.959" y2="1" gradientUnits="objectBoundingBox">
+                    <stop offset="0" stop-color="#8bcdff" />
+                    <stop offset="1" stop-color="#6487ff" />
+                    <stop offset="1" stop-color="#6888f3" />
+                  </linearGradient>
+                  <filter id="Rectangle" x="0" y="0" width="51" height="43.667" filterUnits="userSpaceOnUse">
+                    <feOffset dy="2" input="SourceAlpha" />
+                    <feGaussianBlur stdDeviation="3" result="blur" />
+                    <feFlood flood-color="#003ca4" flood-opacity="0.596" />
+                    <feComposite operator="in" in2="blur" />
+                    <feComposite in="SourceGraphic" />
+                  </filter>
+                </defs>
+                <g id="Group" transform="translate(8.5 6.833)">
+                  <g transform="matrix(1, 0, 0, 1, -8.5, -6.83)" filter="url(#Rectangle)">
+                    <rect id="Rectangle-2" data-name="Rectangle" width="33" height="25.667" rx="3.667" transform="translate(9 7)" fill="url(#linear-gradient)" />
+                  </g>
+                  <path id="Path" d="M0,0,14.5,12,29,0" transform="translate(2.5 3.833)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.75" />
+                </g>
+              </svg>
+   
+              <input type="text" placeholder="Enter your email address" />
+            </div>
+            <button class="subscribe-button">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="seprator"></div>
+      <div class="row justify-content-between">
+        <div class="col-auto mb-4 mb-lg-0">
+          <div class="privacy-box">Privacy Policy . Terms and conditions</div>
+        </div>
+        <div class="col-auto">
+          <div class="social-media-box"> Instagram</div>
+        </div>
+      </div>
+    </div>
+  </div>
